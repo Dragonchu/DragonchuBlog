@@ -9,6 +9,5 @@ pipeline_id="${GITHUB_RUN_ID:-0}"
 tag="v${pipeline_id}-${short_commit}"
 
 docker build \
-  --tag "dragonchu-blog-backend:${tag}" \
   --tag "registry.cn-hangzhou.aliyuncs.com/dragonchu/dragonchu_blog_backend:${tag}" \
-  "${docker_dir}/../"
+  .
