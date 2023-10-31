@@ -8,6 +8,5 @@ short_commit=$(git rev-parse --short HEAD)
 pipeline_id="${GITHUB_RUN_ID:-0}"
 tag="v${pipeline_id}-${short_commit}"
 
-docker build --no-cache\
-  --tag "registry.cn-hangzhou.aliyuncs.com/dragonchu/dragonchu_blog_backend:${tag}" \
-  .
+docker build . --file Dockerfile \
+  --tag "registry.cn-hangzhou.aliyuncs.com/dragonchu/dragonchu_blog_backend:${tag}"
